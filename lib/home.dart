@@ -1,22 +1,32 @@
-import 'package:flutter/material.dart';
-import 'package:movieapp_20091/common/HttpHandler.dart';
+// Creado por: Uriel Maldonado Cortez
+// Asignatura: Desarrollo Movil Integral
+//Grado: 10   Grupo: "A"
+// Docente: MTI. Marco Antonio Ramirez Hernandez
+import 'package:flutter/material.dart'; // Importa la biblioteca Flutter para construir interfaces de usuario.
+import 'package:movieapp_20091/common/HttpHandler.dart'; // Importa la clase HttpHandler desde un archivo llamado HttpHandler.dart.
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  const Home(
+      {super.key}); // Constructor de Home con un parámetro opcional llamado key.
   @override
-  State<Home> createState() => _HomeState();
+  State<Home> createState() =>
+      _HomeState(); // Define una clase que extiende StatefulWidget y proporciona un método para crear su estado interno.
 }
 
 class _HomeState extends State<Home> {
+  // Define una clase que extiende State y representa el estado interno de Home.
   @override
   void initState() {
-    super.initState();
-    _loadJson();
+    // Override del método initState(), que se llama cuando se crea la instancia de este widget.
+    super.initState(); // Llama al initState() de la clase base (State).
+    _loadJson(); // Llama a la función _loadJson() para cargar datos cuando se inicializa el widget.
   }
 
   _loadJson() async {
-    List data = await HttpHandler().fetchMovies();
-    print(data);
+    // Define una función asincrónica para cargar datos.
+    List data = await HttpHandler()
+        .fetchMovies(); // Utiliza la clase HttpHandler para obtener una lista de películas de alguna fuente (por ejemplo, una API).
+    print(data); // Imprime los datos cargados en la consola.
   }
 
   // Estilo de fuente personalizado
