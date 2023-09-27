@@ -4,6 +4,7 @@
 // Docente: MTI. Marco Antonio Ramirez Hernandez
 import 'package:flutter/material.dart'; // Importa la biblioteca Flutter para construir interfaces de usuario.
 import 'package:movieapp_20091/common/HttpHandler.dart'; // Importa la clase HttpHandler desde un archivo llamado HttpHandler.dart.
+import 'package:movieapp_20091/media_list.dart';
 
 class Home extends StatefulWidget {
   const Home(
@@ -15,20 +16,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   // Define una clase que extiende State y representa el estado interno de Home.
-  @override
-  void initState() {
-    // Override del método initState(), que se llama cuando se crea la instancia de este widget.
-    super.initState(); // Llama al initState() de la clase base (State).
-    _loadJson(); // Llama a la función _loadJson() para cargar datos cuando se inicializa el widget.
-  }
-
-  _loadJson() async {
-    // Define una función asincrónica para cargar datos.
-    List data = await HttpHandler()
-        .fetchMovies(); // Utiliza la clase HttpHandler para obtener una lista de películas de alguna fuente (por ejemplo, una API).
-    print(data); // Imprime los datos cargados en la consola.
-  }
-
+  
   // Estilo de fuente personalizado
   final TextStyle customTextStyle = TextStyle(
     fontFamily: 'MiFuente', // Nombre de la fuente definido en pubspec.yaml
@@ -104,6 +92,11 @@ class _HomeState extends State<Home> {
                 .pop(), // Cierra el menú al tocar este elemento
           ),
         ]),
+      ),
+      body: PageView(
+        children: <Widget>[
+          new MediaList()
+        ],
       ),
       bottomNavigationBar: new BottomNavigationBar(
         // Barra de navegación inferior (BottomNavigationBar) con iconos y etiquetas

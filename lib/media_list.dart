@@ -13,7 +13,7 @@ class MediaList extends StatefulWidget {
 }
 
 class _MediaListState extends State<MediaList> {
-  List<Media> _media = new List();
+  List<Media> _media = new List.empty();
   @override
   void initState() {
     super.initState();
@@ -22,6 +22,9 @@ class _MediaListState extends State<MediaList> {
   
   void loadMovies() async {
     var movies = await HttpHandler().fetchMovies();
+    setState(() {
+      _media.addAll(movies);
+    });
   }
 
   // Define una clase que extiende State y representa el estado interno de MediaList.
