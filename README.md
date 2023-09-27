@@ -52,6 +52,8 @@ El archivo `HttpHandler.dart` contiene la lógica para realizar solicitudes HTTP
 
 El archivo `Constants.dart` define una constante `API_KEY`, que se utiliza en `HttpHandler.dart` para autenticar las solicitudes a la API.
 
+
+La aplicacion muestra en el cuerpo principal los poster e las peliculas mas populares
 ## Uso de Fuente Personalizada
 
 La aplicación utiliza un estilo de fuente personalizado (`customTextStyle`) que se define en el código. Esta fuente personalizada se especifica en el archivo `pubspec.yaml` y se aplica a los elementos de texto en la aplicación para darle un aspecto distintivo.
