@@ -3,6 +3,7 @@
 //Grado: 10   Grupo: "A"
 // Docente: MTI. Marco Antonio Ramirez Hernandez
 import 'dart:convert'; // Importa la biblioteca para codificar y decodificar JSON.
+import 'package:movieapp_20091/common/Util.dart'; // Importa la clase Media desde un archivo llamado Media.dart.
 
 class Media {
   int id; // Identificador único del medio.
@@ -14,6 +15,7 @@ class Media {
   String releaseDta; // Fecha de lanzamiento del medio.
   List<dynamic> genreIds; // Lista de identificadores de género del medio.
 
+  String getPosterUrl()=> getMediumPictureUrl(posterPath);
   // Constructor de fábrica para crear una instancia de Media desde un mapa JSON.
   factory Media(Map jsonMap) {
     return new Media.deserialize(jsonMap);

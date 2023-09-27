@@ -13,10 +13,31 @@ class MediaList extends StatefulWidget {
 }
 
 class _MediaListState extends State<MediaList> {
+  List<Media> _media = new List();
+  @override
+  void initState() {
+    super.initState();
+    loadMovies();
+  }
+  
+  void loadMovies() async {
+    var movies = await HttpHandler().fetchMovies();
+  }
+
   // Define una clase que extiende State y representa el estado interno de MediaList.
   @override
   Widget build(BuildContext context) {
-    // Método que construye la interfaz de usuario de MediaList.
-    return new Container(); // Devuelve un widget Container vacío, lo que significa que actualmente la interfaz de usuario de MediaList es un contenedor sin contenido visible.
+    return new Container(
+      child: new ListView.builder(
+        itemCount: _media.length,
+        itemBuilder: (BuildContext context, int index) {
+          return new Column(
+            children: <Widget>[
+              new Image.network(_media[index].getPosterUrl())
+            ],
+          );
+        },
+      ),
+    );
   }
 }
