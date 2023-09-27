@@ -19,8 +19,7 @@ class HttpHandler {
     http.Response response =
         await http.get(uri); // Realiza una solicitud GET HTTP.
     return json
-        .decode(response.body)
-        .toString(); // Decodifica la respuesta JSON.
+        .decode(response.body); // Decodifica la respuesta JSON.
   }
 
   // Define una función para recuperar una lista de películas.

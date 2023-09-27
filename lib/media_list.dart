@@ -13,7 +13,7 @@ class MediaList extends StatefulWidget {
 }
 
 class _MediaListState extends State<MediaList> {
-  List<Media> _media = new List.empty();
+  List<Media> _media = [];
   @override
   void initState() {
     super.initState();
