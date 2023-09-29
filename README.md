@@ -58,11 +58,12 @@ La aplicacion muestra en el cuerpo principal los poster e las peliculas mas popu
 
 La aplicación utiliza un estilo de fuente personalizado (`customTextStyle`) que se define en el código. Esta fuente personalizada se especifica en el archivo `pubspec.yaml` y se aplica a los elementos de texto en la aplicación para darle un aspecto distintivo.
 
-<!-- ## Capturas de Pantalla
-
-[![Captura de Pantalla 1](./assets/1.jpeg)](./assets/1.jpeg)
-[![Captura de Pantalla 2](./assets/2.jpeg)](./assets/2.jpeg)
-[![Captura de Pantalla 3](./assets/3.jpeg)](./assets/3.jpeg) -->
+## Capturas de Pantalla
+<p align="center">
+  <img src="./assets/a.jpeg" width="200" alt="Captura de Pantalla 1">
+  <img src="./assets/b.jpeg" width="200" alt="Captura de Pantalla 2">
+  <img src="./assets/c.jpeg" width="200" alt="Captura de Pantalla 2">
+</p>
 
 ## Instalación
 
