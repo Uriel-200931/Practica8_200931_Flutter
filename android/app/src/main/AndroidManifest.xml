@@ -2,7 +2,7 @@
     <application
         android:label="movieapp_20091"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/icono">
         <activity
             android:name=".MainActivity"
             android:exported="true"

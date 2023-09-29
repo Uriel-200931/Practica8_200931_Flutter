@@ -16,11 +16,11 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   // Define una clase que extiende State y representa el estado interno de Home.
-  
+
   // Estilo de fuente personalizado
   final TextStyle customTextStyle = TextStyle(
     fontFamily: 'MiFuente', // Nombre de la fuente definido en pubspec.yaml
-    fontSize: 16.0, // Tamaño de fuente deseado
+    fontSize: 22.0, // Tamaño de fuente deseado
     fontWeight: FontWeight
         .bold, // Puedes ajustar el peso de la fuente según tus preferencias
   );
@@ -48,16 +48,37 @@ class _HomeState extends State<Home> {
         // Menú lateral (Drawer) que se despliega desde el borde izquierdo
         child: new ListView(children: <Widget>[
           new DrawerHeader(
-              child: new Material()), // Encabezado del menú lateral
-
-          // Elemento del menú "peliculas"
+            child: Center(
+              child: Text(
+                'Menú',
+                style: TextStyle(
+                  color: Colors.black38,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/poster.jpg'), fit: BoxFit.cover)),
+          ),
+          // new DrawerHeader(
+          //   child: new Material(), // Encabezado del menú lateral
+          //   decoration: BoxDecoration(
+          //     image: DecorationImage(
+          //       image: AssetImage('assets/poster.jpg'),
+          //       fit: BoxFit.cover,
+          //     ),
+          //   ),
+          // ),
+          // // Elemento del menú "peliculas"
           new ListTile(
             title: new Text(
               "peliculas",
               style:
                   customTextStyle, // Aplica el estilo de fuente personalizado
             ),
-            trailing: new Icon(Icons.local_movies), // Icono de películas
+            trailing: Image.asset('assets/1.png',
+                width: 45, height: 45), // Icono de películas
           ),
 
           // Separador en el menú
@@ -72,9 +93,9 @@ class _HomeState extends State<Home> {
               style:
                   customTextStyle, // Aplica el estilo de fuente personalizado
             ),
-            trailing: new Icon(Icons.live_tv), // Icono de televisión
+            trailing: Image.asset('assets/2.png',
+                width: 45, height: 45), // Icono de películas
           ),
-
           // Separador en el menú
           new Divider(
             height: 5.0,
@@ -87,16 +108,16 @@ class _HomeState extends State<Home> {
               style:
                   customTextStyle, // Aplica el estilo de fuente personalizado
             ),
-            trailing: new Icon(Icons.live_tv), // Icono de televisión
+            trailing: Image.asset('assets/3.png',
+                width: 45, height: 45), // Icono de películas
+            // Icono de televisión
             onTap: () => Navigator.of(context)
                 .pop(), // Cierra el menú al tocar este elemento
           ),
         ]),
       ),
       body: PageView(
-        children: <Widget>[
-          new MediaList()
-        ],
+        children: <Widget>[new MediaList()],
       ),
       bottomNavigationBar: new BottomNavigationBar(
         // Barra de navegación inferior (BottomNavigationBar) con iconos y etiquetas
